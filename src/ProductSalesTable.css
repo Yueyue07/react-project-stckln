@@ -1,0 +1,29 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  min-width: max-content;
+}
+.table-header {
+  display: flex;
+  font-weight: bold;
+}
+.column-header {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+}
+.table-body {
+  display: flex;
+}
+.table-header div {
+  padding: 8px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.table-row {
+  display: flex;
+}

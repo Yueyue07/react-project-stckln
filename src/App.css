@@ -1,0 +1,29 @@
+.content {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background-color: #001f3f;
+}
+.container {
+  display: flex;
+}
+
+aside {
+  padding: 20px;
+  margin: 20px;
+  flex: 1;
+}
+
+main {
+  flex: 3;
+  margin-left: 20px;
+}
+aside {
+  margin: 0px;
+  background-color: aliceblue;
+}
+.place-holder {
+  width: 100vw;
+  height: 100vh;
+}

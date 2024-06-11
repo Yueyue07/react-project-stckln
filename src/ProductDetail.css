@@ -1,0 +1,36 @@
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-name h2 {
+  margin: 5px;
+}
+.product-name p {
+  padding: 10px;
+  margin: 0px;
+  text-align: center;
+}
+hr {
+  width: calc(100% + 40px);
+  border: none;
+  border-top: 2px solid grey; /* Custom color */
+  margin: 10px 0;
+}
+.tab-section {
+  display: flex;
+}
+.product-tab {
+  border: 1px solid black;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size: smaller;
+  white-space: nowrap;
+}
