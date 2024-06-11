@@ -34,6 +34,7 @@ export function ProductSalesTableReducer(state: State, action: SortAction) {
         ? (a[action.value] as string).localeCompare(b[action.value] as string)
         : (b[action.value] as string).localeCompare(a[action.value] as string);
     }
+    throw new Error('unexpected type');
   };
   switch (action.type) {
     case 'ascend': {

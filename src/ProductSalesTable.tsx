@@ -26,13 +26,23 @@ export default function ProductSalesTable({ sales }: State) {
     unitsSold: sale.unitsSold,
     retailerMargin: `$${sale.retailerMargin.toLocaleString()}`,
   }));
-  const columns: { label: keyof SaleInfo; width: number }[] = [
-    { label: 'weekEnding', width: 200 },
-    { label: 'retailSales', width: 200 },
-    { label: 'wholesaleSales', width: 200 },
-    { label: 'unitsSold', width: 200 },
-    { label: 'retailerMargin', width: 200 },
+  const columns: { label: keyof SaleInfo; width: number, value: string }[] = [
+    { label: 'weekEnding', width: 200, value: 'WEEK ENDING' },
+    { label: 'retailSales', width: 200, value: 'RETAIL SALES' },
+    { label: 'wholesaleSales', width: 200, value: 'WHOLE SALES' },
+    { label: 'unitsSold', width: 200, value: 'UNITS SOLD' },
+    { label: 'retailerMargin', width: 200, value: 'ETAILOR MARGIN' },
   ];
+  const columnHeaders = columns.map(col => {
+    return (
+      <ColumnName
+        key={col.label}
+        name={col.value}
+        value={col.label}
+        onSort={onSort}
+      />
+    );
+  })
   const Row = ({
     index,
     style,
@@ -58,43 +68,13 @@ export default function ProductSalesTable({ sales }: State) {
   return (
     <div className="table-container">
       <div className="table-header">
-        <ColumnName
-          key="WEEK ENDING"
-          name={'WEEK ENDING'}
-          value={'weekEnding'}
-          onSort={onSort}
-        />
-        <ColumnName
-          key="RETAIL SALES"
-          name={'RETAIL SALES'}
-          value={'retailSales'}
-          onSort={onSort}
-        />
-        <ColumnName
-          key="WHOLE SALES"
-          name={'WHOLE SALES'}
-          value={'wholesaleSales'}
-          onSort={onSort}
-        />
-        <ColumnName
-          key="UNITS SOLD"
-          name={'UNITS SOLD'}
-          value={'unitsSold'}
-          onSort={onSort}
-        />
-        <ColumnName
-          key="ETAILOR MARGIN"
-          name={'ETAILOR MARGIN'}
-          value={'retailerMargin'}
-          onSort={onSort}
-        />
+        {columnHeaders}
       </div>
       <List
         height={400}
         itemCount={data.length}
         itemSize={35}
-        width={columns.reduce((sum, col) => sum + col.width, 0)}
-      >
+        width={columns.reduce((sum, col) => sum + col.width, 0)}>
         {Row}
       </List>
     </div>
