@@ -74,7 +74,8 @@ export default function ProductSalesTable({ sales }: State) {
         height={400}
         itemCount={data.length}
         itemSize={35}
-        width={columns.reduce((sum, col) => sum + col.width, 0)}>
+        width={columns.reduce((sum, col) => sum + col.width, 0)}
+      >
         {Row}
       </List>
     </div>

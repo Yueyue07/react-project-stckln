@@ -8,13 +8,11 @@ header {
 .container {
   display: flex;
 }
-
 aside {
   padding: 20px;
   margin: 20px;
   flex: 1;
 }
-
 main {
   flex: 3;
   margin-left: 20px;

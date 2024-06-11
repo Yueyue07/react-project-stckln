@@ -18,11 +18,8 @@ function App() {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-
         const result = (await getProductDetail())[0];
-        console.log(result);
         const { id, title, image, subtitle, tags, sales } = result;
-
         setProductDetail({
           id,
           title,
